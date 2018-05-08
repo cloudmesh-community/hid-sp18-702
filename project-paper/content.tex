@@ -1,7 +1,7 @@
 % status: 100
 % chapter: Blockchain
 
-\title{Report : Big Blockchains}
+\title{Report: Big Blockchains}
 
 
 \author{Lokesh Dubey}
@@ -35,177 +35,1068 @@
 
 \begin{abstract}
 
-Blockchain and specifically cryptocurrencies have been trending high and have been buzzwords in recent past. In particular, Blockchain and its popularity have been mostly tied with cryptocurrencies and all the related entities that comes into picture with any financial transaction, traditional or contemporary. Most of this attention remains channelized towards cryptocurrency and focuses primarily on the challenges of implementations and ways to overcome the limitations that may be subjected to cryptocurrency. In this study we do a detailed introspection on how Blockchain technologies are being used not just with  cryptocurrencies but, also, how it is being applied into various other solutions where we treat Blockchain as open, distributed, peer to peer transacting, database. As, Blockchain is simply agnostic to any currency and can be applied to multiple other solutions which are not even closely related to a financial system. Further, we discuss that implementation of non financial systems can result into very large number of transactions and blocks to be created than it could ever be the case in any cryptocurrencies. And that would throw many more implementation and operational challenges at this new technology along with the very large amount of data being generated in form of Big Blockchain, Big Data in Blockchain.
+  Blockchain and specifically cryptocurrencies have been trending high
+  and have been buzzwords in recent past. In particular, Blockchain
+  and its popularity have been mostly tied with cryptocurrencies and
+  all the related entities that comes into picture with any financial
+  transaction, traditional or contemporary. Most of this attention
+  remains channelized towards cryptocurrency and focuses primarily on
+  the challenges of implementations and ways to overcome the
+  limitations that may be subjected to cryptocurrency. In this study
+  we do a detailed introspection on how Blockchain technologies are
+  being used not just with cryptocurrencies but, also, how it is being
+  applied into various other solutions where we treat Blockchain as
+  open, distributed, peer to peer transacting, database. As,
+  Blockchain is simply agnostic to any currency and can be applied to
+  multiple other solutions which are not even closely related to a
+  financial system. Further, we discuss that implementation of non
+  financial systems can result into very large number of transactions
+  and blocks to be created than it could ever be the case in any
+  cryptocurrencies. And that would throw many more implementation and
+  operational challenges at this new technology along with the very
+  large amount of data being generated in form of Big Blockchain, Big
+  Data in Blockchain.
 
 \end{abstract}
 
-\keywords{hid-sp18-702, Blockchain, Transaction Management, Decentralization, Middleman, Digital Autonomous Organizations}
+\keywords{hid-sp18-702, Blockchain, Transaction Management,
+  Decentralization, Middleman, Digital Autonomous Organizations}
 
 \maketitle
 
 \section{Current Economics and Transaction Management in Supply chain}
 
-There have been extensive technological strides in most of what human lifestyle interacts with on day to day basis. One can pick up any product or entity around them and can always relate to the historical advancements that have been done on it. It has been human nature always to keep improving on the lifestyle and technological advancements play a vital role in it. Most of these advancements in one form of another have been about Internet of information. From century old abacus, to an electronic calculator, to high performance computers is just one example of it \cite{tapscott1}. In everything around us, one can find, that there have been smarter solutions developed and the basic principle of any system has been altered to make the devices smarter to make the efficient use of time and resources. Most of the scenarios eventually find solutions in information technology in unison with electronic advancements. And as the name suggests information technology is all about information and digitizing every single data that is around us and using it to its fullest extent so that one can increase the efficiency of the process and also, in the meanwhile, make the systems smarter by artificial intelligence. However, all of these advancements, for instance, self driving cars, smart grocery shops, or artificial intelligence, have all been the result of Internet of information \cite{tapscott1}. Everything that is being done is mostly in form of making copies of the physical information that we have at hand and making an impression of it on internet. It has always been about digitizing the information and passing it around.
+There have been extensive technological strides in most of what human
+lifestyle interacts with on day to day basis. One can pick up any
+product or entity around them and can always relate to the historical
+advancements that have been done on it. It has been human nature
+always to keep improving on the lifestyle and technological
+advancements play a vital role in it. Most of these advancements in
+one form of another have been about Internet of information. From
+century old abacus, to an electronic calculator, to high performance
+computers is just one example of it \cite{tapscott1}. In everything
+around us, one can find, that there have been smarter solutions
+developed and the basic principle of any system has been altered to
+make the devices smarter to make the efficient use of time and
+resources. Most of the scenarios eventually find solutions in
+information technology in unison with electronic advancements. And as
+the name suggests information technology is all about information and
+digitizing every single data that is around us and using it to its
+fullest extent so that one can increase the efficiency of the process
+and also, in the meanwhile, make the systems smarter by artificial
+intelligence. However, all of these advancements, for instance, self
+driving cars, smart grocery shops, or artificial intelligence, have
+all been the result of Internet of information \cite{tapscott1}.
+Everything that is being done is mostly in form of making copies of
+the physical information that we have at hand and making an impression
+of it on internet. It has always been about digitizing the information
+and passing it around.
 
-One particular system, however, is extremely vital for the humans but hasn't progressed a lot in principle \cite{lionelshriver2}. Transaction management and accounting of any form, even if digitized, is still using the old methodologies and there's very little advancements done on it's principle. For example. We can indeed pay for our Uber\footnote{Uber Is a Smartphone-Enabled Ride Hailing Service Alternative to Taxi Cabs} car ride directly to the driver but eventually its all about transfer of a certain asset between two parties \cite{uber3}. In principle it indeed is just an alternative of giving cash to the cab driver vs paying it via smart phone app. And that includes a lot of intermediaries who are doing the job of transferring the asset, in digitized form, to all the entities involved and then depositing appropriate cash in the drivers bank account. Even though it appears that this system works seamlessly while enforcing a cashless economy if we look at it from a principle that this is based upon, it remains the same. Eventually we're still just transferring an asset, which is digitized, from one party to another. Comparing this to the old system where you pay the cab driver in cash one just has the comfort of using his phone to call a cab and pay for it without worrying about cash. But eventually one is just transferring cash. In fact to make this more beneficial one has introduced a lot of intermediaries and entities in this complete transaction which adds too much time for this process to be taken care of \cite{tapscott1}. When there are so many moving parts to a transaction it will deter its performance. As an end result the Uber driver who could've gotten the payment right away will get his payment delayed or may be at the end of the month. Here are some use cases that illustrate the problems with traditional transaction management in case of supply chain and in the financial paradigm.
+One particular system, however, is extremely vital for the humans but
+hasn't progressed a lot in principle \cite{lionelshriver2}.
+Transaction management and accounting of any form, even if digitized,
+is still using the old methodologies and there's very little
+advancements done on it's principle. For example. We can indeed pay
+for our Uber\footnote{Uber Is a Smartphone-Enabled Ride Hailing
+  Service Alternative to Taxi Cabs} car ride directly to the driver
+but eventually its all about transfer of a certain asset between two
+parties \cite{uber3}. In principle it indeed is just an alternative of
+giving cash to the cab driver vs paying it via smart phone app. And
+that includes a lot of intermediaries who are doing the job of
+transferring the asset, in digitized form, to all the entities
+involved and then depositing appropriate cash in the drivers bank
+account. Even though it appears that this system works seamlessly
+while enforcing a cashless economy if we look at it from a principle
+that this is based upon, it remains the same. Eventually we're still
+just transferring an asset, which is digitized, from one party to
+another. Comparing this to the old system where you pay the cab driver
+in cash one just has the comfort of using his phone to call a cab and
+pay for it without worrying about cash. But eventually one is just
+transferring cash. In fact to make this more beneficial one has
+introduced a lot of intermediaries and entities in this complete
+transaction which adds too much time for this process to be taken care
+of \cite{tapscott1}. When there are so many moving parts to a
+transaction it will deter its performance. As an end result the Uber
+driver who could've gotten the payment right away will get his payment
+delayed or may be at the end of the month. Here are some use cases
+that illustrate the problems with traditional transaction management
+in case of supply chain and in the financial paradigm.
 
 \subsection{Brexit}
 
-Brexit\footnote{A term for the potential or hypothetical departure of the United Kingdom from the European Union} will result into extremely complex trade predicament which would be put in place after United Kingdom's exit from European Union \cite{nicolasbotton4}. In a very small amount of time borders and customs will have to be setup between these geographies in a very short amount of time. The traditional financial system, no matter, how much use of technology it uses would either fail or would be extremely inefficient to provide any timely transactions at such large level. Merely because of the fact that an establishment which was so old and working needs to be changed starting from a certain day where there are lot of intermediate parties involved and many of them would be created viz. regulatory bodies, logistical entities etc. United Kingdom's Brexit team has however suggested a completely novice technology based solution in form Blockchain to address this issue \cite{nicolasbotton4}.
+Brexit\footnote{A term for the potential or hypothetical departure of
+  the United Kingdom from the European Union} will result into
+extremely complex trade predicament which would be put in place after
+United Kingdom's exit from European Union \cite{nicolasbotton4}. In a
+very small amount of time borders and customs will have to be setup
+between these geographies in a very short amount of time. The
+traditional financial system, no matter, how much use of technology it
+uses would either fail or would be extremely inefficient to provide
+any timely transactions at such large level. Merely because of the
+fact that an establishment which was so old and working needs to be
+changed starting from a certain day where there are lot of
+intermediate parties involved and many of them would be created viz.
+regulatory bodies, logistical entities etc. United Kingdom's Brexit
+team has however suggested a completely novice technology based
+solution in form Blockchain to address this issue
+\cite{nicolasbotton4}.
 
-There have been multiple and mixed mentions of Blockchain in finding resolutions to these complex problems in the UK. There are many organizations which are encouraging the use of Blockchain and Hyperledger\footnote{Hyperledger is an umbrella project of open source blockchains and related tools} technology a lot to find solutions to transform global shipping sector. Biggest proponents of these technologies have been IBM and Maersk \cite{stratfor1}.  IBM has started a joint venture with Maersk and according to them they can get the infrastructure ready if not complete but at least ready for this transition in a period of six months. As Blockchain provides a safest and quickest way to handle these supply chain models which keeping track of commodities and assets without any misuse, with all the possible right protections of tangible and intellectual goods these technologies can prove to be really helpful.
+There have been multiple and mixed mentions of Blockchain in finding
+resolutions to these complex problems in the UK. There are many
+organizations which are encouraging the use of Blockchain and
+Hyperledger\footnote{Hyperledger is an umbrella project of open source
+  blockchains and related tools} technology a lot to find solutions to
+transform global shipping sector. Biggest proponents of these
+technologies have been IBM and Maersk \cite{stratfor1}. IBM has
+started a joint venture with Maersk and according to them they can get
+the infrastructure ready if not complete but at least ready for this
+transition in a period of six months. As Blockchain provides a safest
+and quickest way to handle these supply chain models which keeping
+track of commodities and assets without any misuse, with all the
+possible right protections of tangible and intellectual goods these
+technologies can prove to be really helpful.
 
-There are however some difficulties and problems which have been identified with applying Blockchain technology solution to these issues as well. These flows which have to be applied for the custom border transaction management and the smart contracts to be developed for these technologies might be far difficult to implement than any typical supply management problem. Even though the joint venture of IBM and Maersk have committed a certain deadline to achieve this but it doesn't seem like a reality. On top of the complexity of the problem at hand the will to take these risks and investing infrastructure and resources on these problems to solve something which already has a tested solutions, but of course an inefficient solution, would be difficult. It has to be British and Irish governments both who have to agree on going ahead with this implementation and have to take the risk of going ahead with this new buzzword technology which may or may not work. It is simply not possible to provide any kind of accountability for the solutions which cab be applied using Blockchain because simply there's not much information available to even visualize what is being tried. Secondly, the technology itself is novice and has only been applied to simple Hello world solutions and cryptocurrencies only like Bitcoin etc. However, those transactions are fairly straightforward as there's still a lot of skepticism about that as well. Which it the reason why not a lot of people have been adopting these technologies.
+There are however some difficulties and problems which have been
+identified with applying Blockchain technology solution to these
+issues as well. These flows which have to be applied for the custom
+border transaction management and the smart contracts to be developed
+for these technologies might be far difficult to implement than any
+typical supply management problem. Even though the joint venture of
+IBM and Maersk have committed a certain deadline to achieve this but
+it doesn't seem like a reality. On top of the complexity of the
+problem at hand the will to take these risks and investing
+infrastructure and resources on these problems to solve something
+which already has a tested solutions, but of course an inefficient
+solution, would be difficult. It has to be British and Irish
+governments both who have to agree on going ahead with this
+implementation and have to take the risk of going ahead with this new
+buzzword technology which may or may not work. It is simply not
+possible to provide any kind of accountability for the solutions which
+cab be applied using Blockchain because simply there's not much
+information available to even visualize what is being tried. Secondly,
+the technology itself is novice and has only been applied to simple
+Hello world solutions and cryptocurrencies only like Bitcoin etc.
+However, those transactions are fairly straightforward as there's
+still a lot of skepticism about that as well. Which it the reason why
+not a lot of people have been adopting these technologies.
 
-Lot of governments have been in fact banning the circulation and usage of cryptocurrencies because they are simply not ready for it \cite{kate2}. There are multiple factors that apply to the readiness however. Some can be attributed to the ignorance and typical lack of knowledge of the governments, some are because they actually understand that these currencies can take away a lot of control over these pseudo currency on the internet which does have an affect on real world.
+Lot of governments have been in fact banning the circulation and usage
+of cryptocurrencies because they are simply not ready for it
+\cite{kate2}. There are multiple factors that apply to the readiness
+however. Some can be attributed to the ignorance and typical lack of
+knowledge of the governments, some are because they actually
+understand that these currencies can take away a lot of control over
+these pseudo currency on the internet which does have an affect on
+real world.
 
 \subsection{Information is duplicated, not commodity}
 
-Internet of information (things), has revolutionized the impact of technological advancements on human race. The impact of this information on humanity can be imagined sheerly by the fact that now oil is not considered as the most valuable resource, but, its the data. However, most of this information is just replicas \cite{economist5}. Any data we can think of that is on the internet is a duplicate or a copy of something in real world. All the information that we have on internet is either a blatant copy of something in real world. For example, textual information extracted from physical documents and is saved as files in internet, or a song which was sung by an artist and is uploaded as an mp3 file. Or on the other hand it could be the information that is derived from this real world information and has not significance of its own. For example, Facebook has around 2.2 Billion active users monthly. Who are sharing a lot of information in form of photos which are theirs, conversing with friends which are their real thoughts, and liking, disliking posts on Facebook which is an information which is derived by their action on this different information posts \cite{statista6}. So as far as its information it can be digitized, made multiple copies of, and can be shared across internet. This, however, doesn't apply to commodity.
+Internet of information (things), has revolutionized the impact of
+technological advancements on human race. The impact of this
+information on humanity can be imagined sheerly by the fact that now
+oil is not considered as the most valuable resource, but, its the
+data. However, most of this information is just replicas
+\cite{economist5}. Any data we can think of that is on the internet is
+a duplicate or a copy of something in real world. All the information
+that we have on internet is either a blatant copy of something in real
+world. For example, textual information extracted from physical
+documents and is saved as files in internet, or a song which was sung
+by an artist and is uploaded as an mp3 file. Or on the other hand it
+could be the information that is derived from this real world
+information and has not significance of its own. For example, Facebook
+has around 2.2 Billion active users monthly. Who are sharing a lot of
+information in form of photos which are theirs, conversing with
+friends which are their real thoughts, and liking, disliking posts on
+Facebook which is an information which is derived by their action on
+this different information posts \cite{statista6}. So as far as its
+information it can be digitized, made multiple copies of, and can be
+shared across internet. This, however, doesn't apply to commodity.
 
 
-On the other hand there can be some commodities which can be considered as commodity and are also digital. Some examples of such commodities are intellectual property of any user. This can actually be considered in various different perspectives. There can be some organizations who are basically providing nothing but some tutorials which are not really created in real world but are actually the write ups coming from many experts or experience people who have actually worked on those products and know what needs to be done with them. Lets consider Quora\footnote{Quora is a question-and-answer site where questions are asked, answered, edited, and organized by its community of users}, it's a social networking site however it has a very different objective than any other major sites like Facebook, Twitter etc. Quora is very similar to an old site Yahoo Answers but that site is literally to get answers for any random question that one can imaging and ask. Quora on the other hand is a site where a lot people collaborate, socialize with people intellectually. In most cases we consider it like an online book club but with millions of users to it. There are many users on these site who write up really nice articles on this site which are essentially a commodity. These writeup are even published and cited by many publications, news papers.
+On the other hand there can be some commodities which can be
+considered as commodity and are also digital. Some examples of such
+commodities are intellectual property of any user. This can actually
+be considered in various different perspectives. There can be some
+organizations who are basically providing nothing but some tutorials
+which are not really created in real world but are actually the write
+ups coming from many experts or experience people who have actually
+worked on those products and know what needs to be done with them.
+Lets consider Quora\footnote{Quora is a question-and-answer site where
+  questions are asked, answered, edited, and organized by its
+  community of users}, it's a social networking site however it has a
+very different objective than any other major sites like Facebook,
+Twitter etc. Quora is very similar to an old site Yahoo Answers but
+that site is literally to get answers for any random question that one
+can imaging and ask. Quora on the other hand is a site where a lot
+people collaborate, socialize with people intellectually. In most
+cases we consider it like an online book club but with millions of
+users to it. There are many users on these site who write up really
+nice articles on this site which are essentially a commodity. These
+writeup are even published and cited by many publications, news
+papers.
 
-But in this case a well the matter which is being generated online is completely open to all the users of quora because there's no content on Quora that is hidden. Its just an intellectual property of a Quora user and if the wishes to she should be able to charge royalty for any usage of such property and most important should have control over any illegitimate and abuse of the property by online users knowingly or even unknowingly.
+But in this case a well the matter which is being generated online is
+completely open to all the users of quora because there's no content
+on Quora that is hidden. Its just an intellectual property of a Quora
+user and if the wishes to she should be able to charge royalty for any
+usage of such property and most important should have control over any
+illegitimate and abuse of the property by online users knowingly or
+even unknowingly.
 
-Unknowingly, because internet is nothing but the users essentially jumping from one url to another without even knowing what is about to appear on their screen \cite{jane3}. The same hyperlink basically may take you to a random site which is allowing a lot of ads to make revenue. However those ads are nothing but url to some other sites which most likely may be taking you to sites which are offering movies and songs which are freely available or are simply pirated copies. In these kinds of scenarios it makes it extremely difficult to figure out who was actually consuming the content knowingly and was actually looking for it. Or the person was simply driven into this mesh of hyperlinks because of which the user is here. There are indeed a lot of ways to tackle these problems but the most any government of the copyright protection boards can do is shutdown the website. They cannot really charge them or hold them accountable for it because they were simply providing links to their ad providers and did not intend to do that. These kind of loop holes in the existing system makes it extremely difficult to keep the commodity, which indeed exists on the internet in a virtual form, secure.
+Unknowingly, because internet is nothing but the users essentially
+jumping from one url to another without even knowing what is about to
+appear on their screen \cite{jane3}. The same hyperlink basically may
+take you to a random site which is allowing a lot of ads to make
+revenue. However those ads are nothing but url to some other sites
+which most likely may be taking you to sites which are offering movies
+and songs which are freely available or are simply pirated copies. In
+these kinds of scenarios it makes it extremely difficult to figure out
+who was actually consuming the content knowingly and was actually
+looking for it. Or the person was simply driven into this mesh of
+hyperlinks because of which the user is here. There are indeed a lot
+of ways to tackle these problems but the most any government of the
+copyright protection boards can do is shutdown the website. They
+cannot really charge them or hold them accountable for it because they
+were simply providing links to their ad providers and did not intend
+to do that. These kind of loop holes in the existing system makes it
+extremely difficult to keep the commodity, which indeed exists on the
+internet in a virtual form, secure.
 
 \section{Asset}
-Commodity, on the other hand, cannot be really digitized and eventually cannot be shared. For the sake of simplicity lets just consider our commodity of concern for sometime as currency. This particular theory, whereas, can be applied on any commodity as well. So there have been a lot of technological advancements done in case of banking in all this time as well and we've moved from the age old barter system, to having a currency which basically means the government of one's country owes the bearer of the currency the amount of money mentioned on the currency. From direct handling and exchanging of cash there were more advancements made in the case of banking where the currency was indeed pseudo digital \cite{Chen7}. Yes, for a certain period of time it felt like the currency is digital and you can exchange it and purchase real world things with it, but it wasn't really digital. In this case as well, just like information, the currency was indeed a replica of a real world currency sitting in internet. On one hand indeed the transaction that was carried out was digital but at the end of the someone else did the physical transfer of money in any scenario. We can consider the same example as described before where one can pay the uber driver with an app and do not use cash at all. But indeed there's physical money that exists in the real world which is exchanged at a different level, in this case federal banks.
 
-Now, lets take another look at this and flip the currency with a commodity. Let's take an example of Youtube\footnote{YouTube is a free video sharing website that makes it easy to upload, watch online videos.} creator space and advertisement model. In current model there are lot of intermediaries involved in the complete payment model \cite{bryanm8}. For example there are advertisers, youtube organization, viewers, youtube creators, subtitle providers and many more. Here the commodity is basically a youtube video in form of a song or DIY (Do it yourself) etc. which is uploaded on Youtube. Now before the artists get paid there are a lot of unknowns and a lot of hops that the money takes to eventually reach to the actual creator of the content. Moreover with increasing competition from fellow youtube content creators even though we have digitized everything and it has been made easier for any youtube user to have very wide and quick outreach to a lot of viewers in form of youtube platform but the artists are getting a lot less paid than the traditional copyright model \cite{tapscott1,helienne9}.
+Commodity, on the other hand, cannot be really digitized and
+eventually cannot be shared. For the sake of simplicity lets just
+consider our commodity of concern for sometime as currency. This
+particular theory, whereas, can be applied on any commodity as well.
+So there have been a lot of technological advancements done in case of
+banking in all this time as well and we've moved from the age old
+barter system, to having a currency which basically means the
+government of one's country owes the bearer of the currency the amount
+of money mentioned on the currency. From direct handling and
+exchanging of cash there were more advancements made in the case of
+banking where the currency was indeed pseudo digital \cite{Chen7}.
+Yes, for a certain period of time it felt like the currency is digital
+and you can exchange it and purchase real world things with it, but it
+wasn't really digital. In this case as well, just like information,
+the currency was indeed a replica of a real world currency sitting in
+internet. On one hand indeed the transaction that was carried out was
+digital but at the end of the someone else did the physical transfer
+of money in any scenario. We can consider the same example as
+described before where one can pay the uber driver with an app and do
+not use cash at all. But indeed there's physical money that exists in
+the real world which is exchanged at a different level, in this case
+federal banks.
+
+Now, lets take another look at this and flip the currency with a
+commodity. Let's take an example of Youtube\footnote{YouTube is a free
+  video sharing website that makes it easy to upload, watch online
+  videos.} creator space and advertisement model. In current model
+there are lot of intermediaries involved in the complete payment model
+\cite{bryanm8}. For example there are advertisers, youtube
+organization, viewers, youtube creators, subtitle providers and many
+more. Here the commodity is basically a youtube video in form of a
+song or DIY (Do it yourself) etc. which is uploaded on Youtube. Now
+before the artists get paid there are a lot of unknowns and a lot of
+hops that the money takes to eventually reach to the actual creator of
+the content. Moreover with increasing competition from fellow youtube
+content creators even though we have digitized everything and it has
+been made easier for any youtube user to have very wide and quick
+outreach to a lot of viewers in form of youtube platform but the
+artists are getting a lot less paid than the traditional copyright
+model \cite{tapscott1,helienne9}.
 
 
-As we can see in most of these scenarios there are a lot of flaws in the system which makes it extremely inefficient. We can see that it is indeed a natural progression of research to make life easier and make the systems more efficient. But in most of these cases everything is digitized from real word to information on internet. But in almost all of the cases the underlining fundamental principle remain the same. We do see some benefits of it because its easily accessible over internet and has a much wider reach than it had every before but still there are a lot of inefficiencies in the system which needs to be addressed.
+As we can see in most of these scenarios there are a lot of flaws in
+the system which makes it extremely inefficient. We can see that it is
+indeed a natural progression of research to make life easier and make
+the systems more efficient. But in most of these cases everything is
+digitized from real word to information on internet. But in almost all
+of the cases the underlining fundamental principle remain the same. We
+do see some benefits of it because its easily accessible over internet
+and has a much wider reach than it had every before but still there
+are a lot of inefficiencies in the system which needs to be addressed.
 
 
 \section{Centralized Intermediaries}
-The biggest problem with the traditional transaction management systems or financial institutions operating over internet are the middlemen \cite{torres10}. Here a middleman is some who exists in practically every transaction that occurs in a supply chain model or any financial transaction that happens in banking sector, stocks \& bonds or it can simply be a tap a consumer does with his Visa card on Walmart. In fact, the middleman existed right from the days of barter system where if the commodity you need is with the person who's not interested in your commodity can be solved simply by involving a middleman who charges a certain amount and exchanges the commodities for you and stores what's in excess with him to be utilized for a similar transaction later. In today's world however this can be considered as entities like Banks, National Security Agency\footnote{The National Security Agency is a national-level intelligence agency of the United States Department of Defense, under the authority of the Director of National Intelligence.}, Google etc which in most cases are centralized. As described before in our previous example of the Uber cab driver payment we listed numerous intermediaries down ranging from the app provider, banking institutions, regulatory authorities etc. Let's take one more example of remittance of currency to another country. In today's highly developed and technologically advance system as well it takes at least 5-6 approximately to send money from one country to another \cite{martinez11}. There are many intermediaries in this scenarios like the sender, sender's bank, sender's remittance bank, federal bank, authority from sender's country, federal authority from receiver's country, receiver's remittance bank. And even though highly digitize these all intermediaries are still a bottleneck in making these transactions efficient and faster, because of the sheer fact that they bring any transaction to a centralized ecosystem and it can be validated, rejected, updated only from that centralized system.
 
-Blockchain as a concept and the related technologies are primarily taking out the middleman out of the picture, inherently \cite{lloyd4}. As the blockchain concept in itself is based on the fact that its peer to peer transaction, which can be regulated by regulatory authorities but it would not be governed, approved or moved by the middleman. As blockchain technologies and the principle behind it in form of a distributed ledger basically takes away any kind of need of a central authority or an approver to complete the transaction. One of the postulates of these kinds of establishments later would be that because this is a peer to peer transaction the participants can decide the amount they need to charge or can actually get to agreement faster, with mutual consent, and most importantly whenever they want to.
+The biggest problem with the traditional transaction management
+systems or financial institutions operating over internet are the
+middlemen \cite{torres10}. Here a middleman is some who exists in
+practically every transaction that occurs in a supply chain model or
+any financial transaction that happens in banking sector, stocks \&
+bonds or it can simply be a tap a consumer does with his Visa card on
+Walmart. In fact, the middleman existed right from the days of barter
+system where if the commodity you need is with the person who's not
+interested in your commodity can be solved simply by involving a
+middleman who charges a certain amount and exchanges the commodities
+for you and stores what's in excess with him to be utilized for a
+similar transaction later. In today's world however this can be
+considered as entities like Banks, National Security
+Agency\footnote{The National Security Agency is a national-level
+  intelligence agency of the United States Department of Defense,
+  under the authority of the Director of National Intelligence.},
+Google etc which in most cases are centralized. As described before in
+our previous example of the Uber cab driver payment we listed numerous
+intermediaries down ranging from the app provider, banking
+institutions, regulatory authorities etc. Let's take one more example
+of remittance of currency to another country. In today's highly
+developed and technologically advance system as well it takes at least
+5-6 approximately to send money from one country to another
+\cite{martinez11}. There are many intermediaries in this scenarios
+like the sender, sender's bank, sender's remittance bank, federal
+bank, authority from sender's country, federal authority from
+receiver's country, receiver's remittance bank. And even though highly
+digitize these all intermediaries are still a bottleneck in making
+these transactions efficient and faster, because of the sheer fact
+that they bring any transaction to a centralized ecosystem and it can
+be validated, rejected, updated only from that centralized system.
 
-Middleman in most cases is not really the person who's even in the transaction. A transaction, if we juxtapose it with Barter system, is more or less necessary just to involve two or three parties who really wish to exchange a particular commodity with another. One commodity in most of the cases would be financial asset like currency. But in most case there are two person involved in any transaction where one is the provider and has either excess of a certain commodity, or grows that commodity and makes a living out of it by selling it, or is planning to get rid of that commodity for some reason. And the other person involved in these transactions is the one who is actually in need of this commodity. But where does the middleman come into this picture.
+Blockchain as a concept and the related technologies are primarily
+taking out the middleman out of the picture, inherently \cite{lloyd4}.
+As the blockchain concept in itself is based on the fact that its peer
+to peer transaction, which can be regulated by regulatory authorities
+but it would not be governed, approved or moved by the middleman. As
+blockchain technologies and the principle behind it in form of a
+distributed ledger basically takes away any kind of need of a central
+authority or an approver to complete the transaction. One of the
+postulates of these kinds of establishments later would be that
+because this is a peer to peer transaction the participants can decide
+the amount they need to charge or can actually get to agreement
+faster, with mutual consent, and most importantly whenever they want
+to.
 
-Here middleman is basically a finder, minder and grinder. There are many issues when these commodities are to be exchanged. First of all there has to be a way to connect these two participants who are trying to exchange commodity but there's no mutual channel between them so that they can share that information. Second the commodity which is being sold may too much or too less for the other participant who needs it. In whcih this same transactions becomes a little more complicated with two participants, who are to be found first, will provide the commodity to just one participant. This is a fairly simple and very basic problem statement in that a middleman helps a lot by taking the risk and finding the participants for a transaction, making sure the appropriate security is maintained and both participants are feeling positive about transactions and are rest assured of any fraudulent transaction.
+Middleman in most cases is not really the person who's even in the
+transaction. A transaction, if we juxtapose it with Barter system, is
+more or less necessary just to involve two or three parties who really
+wish to exchange a particular commodity with another. One commodity in
+most of the cases would be financial asset like currency. But in most
+case there are two person involved in any transaction where one is the
+provider and has either excess of a certain commodity, or grows that
+commodity and makes a living out of it by selling it, or is planning
+to get rid of that commodity for some reason. And the other person
+involved in these transactions is the one who is actually in need of
+this commodity. But where does the middleman come into this picture.
 
-In any of these scenarios we can find that any transaction related to any commodity when involves a lot of middlemen the system becomes inefficient irrespective of how digital or best the solution is because at the end of the day the commodity has to exchange this multiple hands, even though digitized. And this takes a lot of time and resources. What this showcases is that even though most of the information and commodity digitization has improved the speed of these transactions to a certain extent but in principle they are all following the same traditional real world methodologies and are centralized bottlenecks.
+Here middleman is basically a finder, minder and grinder. There are
+many issues when these commodities are to be exchanged. First of all
+there has to be a way to connect these two participants who are trying
+to exchange commodity but there's no mutual channel between them so
+that they can share that information. Second the commodity which is
+being sold may too much or too less for the other participant who
+needs it. In whcih this same transactions becomes a little more
+complicated with two participants, who are to be found first, will
+provide the commodity to just one participant. This is a fairly simple
+and very basic problem statement in that a middleman helps a lot by
+taking the risk and finding the participants for a transaction, making
+sure the appropriate security is maintained and both participants are
+feeling positive about transactions and are rest assured of any
+fraudulent transaction.
 
-A research paper that was published in 2008 focusses only on one certain aspect of currency called Bitcoin \cite{bitcoin12}. However, Bitcoin is merely one form of commodity for which there's a Blockchain which is active and people own and transaction in that Blockchain to carry out transaction of their Bitcoins. The principle on which Bitcoin is based is something which is extremely novice and provides solution to all the limitations of the traditional transaction management systems mentioned above and is called Blockchain. Which provides a way to devise decentralized and distributed database that allows peer to peer transactions by removing the middleman, is agnostic to any international boundaries and can be applied to any kind of commodity, asset, intellectual property and not just money.
+In any of these scenarios we can find that any transaction related to
+any commodity when involves a lot of middlemen the system becomes
+inefficient irrespective of how digital or best the solution is
+because at the end of the day the commodity has to exchange this
+multiple hands, even though digitized. And this takes a lot of time
+and resources. What this showcases is that even though most of the
+information and commodity digitization has improved the speed of these
+transactions to a certain extent but in principle they are all
+following the same traditional real world methodologies and are
+centralized bottlenecks.
+
+A research paper that was published in 2008 focusses only on one
+certain aspect of currency called Bitcoin \cite{bitcoin12}. However,
+Bitcoin is merely one form of commodity for which there's a Blockchain
+which is active and people own and transaction in that Blockchain to
+carry out transaction of their Bitcoins. The principle on which
+Bitcoin is based is something which is extremely novice and provides
+solution to all the limitations of the traditional transaction
+management systems mentioned above and is called Blockchain. Which
+provides a way to devise decentralized and distributed database that
+allows peer to peer transactions by removing the middleman, is
+agnostic to any international boundaries and can be applied to any
+kind of commodity, asset, intellectual property and not just money.
 
 
 \section{Blockchain}
-Blockchain is a distributed database in form of a ledger which is updated with distributed transactions that are secured by cryptography and works based on the consensus of all the parties involved in it \cite{beck13}. A Blockchain is simply a immutable ledger of various transactions that are stored in that ledger and any transaction can only be added to the ledger after its validated by all the parties involved and is secured by cryptography to avoid any foul play. These ledger in itself consists of various blocks which are a set of transactions which are combined together in form a Block and are appended in an already existing chain of Blocks. To process these transactions and to add any block to existing block chain there's a certain amount of computational work has to be put in to figure out a certain cryptographic key which can validate that next block is the correct block to be appended to the chain. Blockchains are generally open to all on the channel to see and process transactions for all users known as miners.
 
-Rather than delving into the details of what Blockchain is and to remain consistent with scope of this study the focus would here after would be more on the benefits of Blockchain, their applications and how they open new avenues for Big data. At every transformation that Blockchain can bring we'll look at each aspect it from both perspectives, monetary and non-monetary both. As, this has been the premise of this study right from start that Blockchain is not just about cryptocurrency or something monetary but it can be applied to any commodity, use case where there are transactions \cite{beck13}.
+Blockchain is a distributed database in form of a ledger which is
+updated with distributed transactions that are secured by cryptography
+and works based on the consensus of all the parties involved in it
+\cite{beck13}. A Blockchain is simply a immutable ledger of various
+transactions that are stored in that ledger and any transaction can
+only be added to the ledger after its validated by all the parties
+involved and is secured by cryptography to avoid any foul play. These
+ledger in itself consists of various blocks which are a set of
+transactions which are combined together in form a Block and are
+appended in an already existing chain of Blocks. To process these
+transactions and to add any block to existing block chain there's a
+certain amount of computational work has to be put in to figure out a
+certain cryptographic key which can validate that next block is the
+correct block to be appended to the chain. Blockchains are generally
+open to all on the channel to see and process transactions for all
+users known as miners.
 
-In this further exploration we'll look in various aspects and issues in real world that blockchain technology has more or less uncovered. Some of the major industries and domains which this technology can really help with our the global financial establishment, a genuine true global world economy, while making sure that the security is not compromised. And providing appropriates hooks for all kinds of security auditing so that there's always no question or hesitation in any adopters to be skeptical about the technology and to only focus and invest energy in getting the best out of this technology.
+Rather than delving into the details of what Blockchain is and to
+remain consistent with scope of this study the focus would here after
+would be more on the benefits of Blockchain, their applications and
+how they open new avenues for Big data. At every transformation that
+Blockchain can bring we'll look at each aspect it from both
+perspectives, monetary and non-monetary both. As, this has been the
+premise of this study right from start that Blockchain is not just
+about cryptocurrency or something monetary but it can be applied to
+any commodity, use case where there are transactions \cite{beck13}.
 
-This particular study, right from the start, have been insinuating a lot on not considering Blockchain as a cryptocurrency driven technology. In fact there's a high possibility that Bitcoin like cryptocurrencies which are highly driven by the market are extremely sensitive commodity to be handled by blockchain \cite{iyke5}. However, the sheer concept of distributed database which immutable in itself makes a very good case of, if not cryptocurrencies, blockchain technologies in themselves have a very good future. Many organizations and big supply chain management companies have already started garnering benefits of the available solutions around blockchain. However, there are not at all chances that cryptocurrencies won't survive. Its just the general human tendency to be skeptical about anything related to finance. But still cryptocurrencies have a very bright future as they are and will complement any service that is not centralized and not to rely on any legacy on payment systems.
+In this further exploration we'll look in various aspects and issues
+in real world that blockchain technology has more or less uncovered.
+Some of the major industries and domains which this technology can
+really help with our the global financial establishment, a genuine
+true global world economy, while making sure that the security is not
+compromised. And providing appropriates hooks for all kinds of
+security auditing so that there's always no question or hesitation in
+any adopters to be skeptical about the technology and to only focus
+and invest energy in getting the best out of this technology.
 
-In the interest of keeping this study scoped and because there's already a lot of work that is mostly done on Bitcoin and cryptocurrencies in the subsequent topics as well we'll focus mostly on the real world, non cryptocurrency applications, limitations, challenges of Blockchain \cite{yli18}.
+This particular study, right from the start, have been insinuating a
+lot on not considering Blockchain as a cryptocurrency driven
+technology. In fact there's a high possibility that Bitcoin like
+cryptocurrencies which are highly driven by the market are extremely
+sensitive commodity to be handled by blockchain \cite{iyke5}. However,
+the sheer concept of distributed database which immutable in itself
+makes a very good case of, if not cryptocurrencies, blockchain
+technologies in themselves have a very good future. Many organizations
+and big supply chain management companies have already started
+garnering benefits of the available solutions around blockchain.
+However, there are not at all chances that cryptocurrencies won't
+survive. Its just the general human tendency to be skeptical about
+anything related to finance. But still cryptocurrencies have a very
+bright future as they are and will complement any service that is not
+centralized and not to rely on any legacy on payment systems.
+
+In the interest of keeping this study scoped and because there's
+already a lot of work that is mostly done on Bitcoin and
+cryptocurrencies in the subsequent topics as well we'll focus mostly
+on the real world, non cryptocurrency applications, limitations,
+challenges of Blockchain \cite{yli18}.
 
 
 \section{Global economy and prosperity}
-As we have established that the Banking sector has been digitized at a very aggressive rate nearly everything in a bank these days is either available through internet and provide easy access to multiple services of a bank over a computer or a mobile phone. As glittery and ambitious it may sound the underlining systems are still following the same old traditional approach to handle any kinds of transactions. And anything in banking security eventually can be related to the identity of the transactions. A bank will require a lot of identifications before anyone can get a bank account \cite{cocco14}. This is one of the major flaws in the current banking and financial systems. Anyone who wishes to be a part of the global economy should have an identity. Even though the lender and the receiver both have no business whatsoever with providing their identities, their address proofs or even their names to the bank. For a simple transaction like transferring money from one bank account to another, the intermediary here, the bank demands both of the parties to identify themselves. Which simply gets extremely complex if one wishes to work on an asset transaction beyond the geographical boundaries of a country or a union.
 
-This is simply not possible and it doesn't provides a growth-centric environment which facilitates and promotes prosperity in the world. There are still a large population in this world which doesn't even have a bank account. More than 15 countries have only 15\% or less people have a bank account. This doesn't mean that this population doesn't require money or is simply living off a barter system. Vast majority in this remaining 85\% of population simply cannot afford to have identification because of procedural hassles, corruption in the countries or they simply think its not of a benefit to them \cite{camilla15}. In addition to this there are majorities who are simply do not trust banking systems with their less but hard earned money. However, in most scenarios while in a transaction the identity shouldn't matter just like an economy with cash. When you have cash and if you want to exchange it for some commodity the seller doesn't demand an identification. Of course there are various caveats to this theory but for those kinds of problem statements as well controlled audits can be arranged to avoid any misuse.
+As we have established that the Banking sector has been digitized at a
+very aggressive rate nearly everything in a bank these days is either
+available through internet and provide easy access to multiple
+services of a bank over a computer or a mobile phone. As glittery and
+ambitious it may sound the underlining systems are still following the
+same old traditional approach to handle any kinds of transactions. And
+anything in banking security eventually can be related to the identity
+of the transactions. A bank will require a lot of identifications
+before anyone can get a bank account \cite{cocco14}. This is one of
+the major flaws in the current banking and financial systems. Anyone
+who wishes to be a part of the global economy should have an identity.
+Even though the lender and the receiver both have no business
+whatsoever with providing their identities, their address proofs or
+even their names to the bank. For a simple transaction like
+transferring money from one bank account to another, the intermediary
+here, the bank demands both of the parties to identify themselves.
+Which simply gets extremely complex if one wishes to work on an asset
+transaction beyond the geographical boundaries of a country or a
+union.
 
-In contrast, if we take a commodity in consideration after all the technological advancements and global push towards building a prosperous and better world, we still see famines and malnutrition being an epidemic in most of the under developed countries. Even though there are organizations like United Nations, Unicef\footnote{The United Nations International Children's Fund is a United Nations program headquartered in New York City that provides humanitarian and developmental assistance to children and mothers in developing countries} which after being non profit organizations dedicated for the betterment and uplifting of world's economy there are still countries where large set of population dies of hunger and doesn't have reliable source of clean water, food and clothes \cite{bbc16}. This is primarily because of a broken supply chain system which has a lot of intermediaries, and however with a good intention, when this model constitutes of many countries it makes it extremely complex, inefficient which causes delays \cite{van16}.
+This is simply not possible and it doesn't provides a growth-centric
+environment which facilitates and promotes prosperity in the world.
+There are still a large population in this world which doesn't even
+have a bank account. More than 15 countries have only 15\% or less
+people have a bank account. This doesn't mean that this population
+doesn't require money or is simply living off a barter system. Vast
+majority in this remaining 85\% of population simply cannot afford to
+have identification because of procedural hassles, corruption in the
+countries or they simply think its not of a benefit to them
+\cite{camilla15}. In addition to this there are majorities who are
+simply do not trust banking systems with their less but hard earned
+money. However, in most scenarios while in a transaction the identity
+shouldn't matter just like an economy with cash. When you have cash
+and if you want to exchange it for some commodity the seller doesn't
+demand an identification. Of course there are various caveats to this
+theory but for those kinds of problem statements as well controlled
+audits can be arranged to avoid any misuse.
+
+In contrast, if we take a commodity in consideration after all the
+technological advancements and global push towards building a
+prosperous and better world, we still see famines and malnutrition
+being an epidemic in most of the under developed countries. Even
+though there are organizations like United Nations,
+Unicef\footnote{The United Nations International Children's Fund is a
+  United Nations program headquartered in New York City that provides
+  humanitarian and developmental assistance to children and mothers in
+  developing countries} which after being non profit organizations
+dedicated for the betterment and uplifting of world's economy there
+are still countries where large set of population dies of hunger and
+doesn't have reliable source of clean water, food and clothes
+\cite{bbc16}. This is primarily because of a broken supply chain
+system which has a lot of intermediaries, and however with a good
+intention, when this model constitutes of many countries it makes it
+extremely complex, inefficient which causes delays \cite{van16}.
 
 
-Blockchain can provide various ingenious solutions to these problems. On banking perspective in blockchain a simple peer to peer economy can be established where an identity is only exposed to an extent that its needed \cite{yli18}. One doesn't need to have a government authorized document to identify herself. Anyone with a small device that connects to the blockchain can carry out transactions directly, in real time, even with least money and denominations possible. With Blockchain a free and open economy can be raised and established where people who never had a bank account can make transactions across the world without ever having to even show their identification. All that identifies them is their private key for their account.
+Blockchain can provide various ingenious solutions to these problems.
+On banking perspective in blockchain a simple peer to peer economy can
+be established where an identity is only exposed to an extent that its
+needed \cite{yli18}. One doesn't need to have a government authorized
+document to identify herself. Anyone with a small device that connects
+to the blockchain can carry out transactions directly, in real time,
+even with least money and denominations possible. With Blockchain a
+free and open economy can be raised and established where people who
+never had a bank account can make transactions across the world
+without ever having to even show their identification. All that
+identifies them is their private key for their account.
 
-In juxtaposition any supply chain model for any of the relief that is being sent from across the world can be driven and governed by a central blockchain channel where smart contract govern what relief was committed, sent and keep track of its location in real time \cite{christ19}. Multiple auditors on the channel can ensure the timely delivery of the good and services which can make the system void if any of the intermediaries are causing delays in which case the transactions can be voided at anytime. This can avoid delays completely and drives the complete system based on performance and inherent accountability where one only gets paid  when work is done in a timely and efficient manner.
+In juxtaposition any supply chain model for any of the relief that is
+being sent from across the world can be driven and governed by a
+central blockchain channel where smart contract govern what relief was
+committed, sent and keep track of its location in real time
+\cite{christ19}. Multiple auditors on the channel can ensure the
+timely delivery of the good and services which can make the system
+void if any of the intermediaries are causing delays in which case the
+transactions can be voided at anytime. This can avoid delays
+completely and drives the complete system based on performance and
+inherent accountability where one only gets paid when work is done in
+a timely and efficient manner.
 
 \section{Shades of Identities}
-Identity theft and misuse of personally identifiable information has been one of the biggest threats in recent past. With the emerging social media and Internet of Things it is next to impossible to be discrete about information being shared on the internet \cite{reuters20}. It is not only just about the social media but there are millions of apps which are on one hand very useful and saves a lot of resources and energy but on the other hand makes every user extremely vulnerable towards their usage \cite{statista21}. Internet however has become one of the most easiest target for stealing personally identifiable information and a lot of information which can prove to be costly to the users \cite{hedayati22}.
 
-Most of these identities are already pretty much exposed in the internet world and are being misused all the time. These identities are used and misused as seen fit by multiple users of the internet. Even for the sites like Facebook and Twitter which are considered social networking sites the data is always at risk. One would knowingly put all his personal information on his social media account to share with his friends and family but still that information is uploaded on the internet and has no control over its security and it can be in fact misused and have been misused very easily. On one hand with GDPR\footnote{General Data Protection Regulation} European unions are trying to get rid of any PII\footnote{Personally Identifiable Information} information to get out on any other country's infrastructure even on cloud but on the other hand with these social medias and mass utilized sites on the internet there's no control over this information being shared with others.
+Identity theft and misuse of personally identifiable information has
+been one of the biggest threats in recent past. With the emerging
+social media and Internet of Things it is next to impossible to be
+discrete about information being shared on the internet
+\cite{reuters20}. It is not only just about the social media but there
+are millions of apps which are on one hand very useful and saves a lot
+of resources and energy but on the other hand makes every user
+extremely vulnerable towards their usage \cite{statista21}. Internet
+however has become one of the most easiest target for stealing
+personally identifiable information and a lot of information which can
+prove to be costly to the users \cite{hedayati22}.
+
+Most of these identities are already pretty much exposed in the
+internet world and are being misused all the time. These identities
+are used and misused as seen fit by multiple users of the internet.
+Even for the sites like Facebook and Twitter which are considered
+social networking sites the data is always at risk. One would
+knowingly put all his personal information on his social media account
+to share with his friends and family but still that information is
+uploaded on the internet and has no control over its security and it
+can be in fact misused and have been misused very easily. On one hand
+with GDPR\footnote{General Data Protection Regulation} European unions
+are trying to get rid of any PII\footnote{Personally Identifiable
+  Information} information to get out on any other country's
+infrastructure even on cloud but on the other hand with these social
+medias and mass utilized sites on the internet there's no control over
+this information being shared with others.
 
 
-There's indeed a fundamental flaw in the systems that we use today where we have to to share our actual identity in most scenarios to be a part of any product that is on internet. For example in financial and banking institutions we should be able to only share the information that pertains to and is needed by the banking firm. It doesn't have to be completely information where you share your full name, your email address, your address etc. Similarly if someone is utilizing let's say cable from the cable provider. In which case the person doesn't have to share anything else with the cable provider other than the address and may be a way to identify himself. A very novice way to handle this completely by Blockchain is that it provides control to each user to have complete discretion over her identity and the user can choose and decide to divest that information on that particular channel or not, or in other words is that information really needed to be shared \cite{alex23}. In these implementations one can really own and control the identity, trust the system not the other user on channel as the trust arrives inherently by mutual approvals.
+There's indeed a fundamental flaw in the systems that we use today
+where we have to to share our actual identity in most scenarios to be
+a part of any product that is on internet. For example in financial
+and banking institutions we should be able to only share the
+information that pertains to and is needed by the banking firm. It
+doesn't have to be completely information where you share your full
+name, your email address, your address etc. Similarly if someone is
+utilizing let's say cable from the cable provider. In which case the
+person doesn't have to share anything else with the cable provider
+other than the address and may be a way to identify himself. A very
+novice way to handle this completely by Blockchain is that it provides
+control to each user to have complete discretion over her identity and
+the user can choose and decide to divest that information on that
+particular channel or not, or in other words is that information
+really needed to be shared \cite{alex23}. In these implementations one
+can really own and control the identity, trust the system not the
+other user on channel as the trust arrives inherently by mutual
+approvals.
 
 
 \section{Ownership and Royalty}
-With the explosion of information and rise of social media there have been a complete paradigm shift in ways the different businesses and domains play out. Social media explosion and information sharing capabilities have provided a wide outreach for very small creators who could never get to share their skills or benefit from them because of the competition and limited resources. With platforms like Twitter\footnote{Twitter is an online news and social networking service on which users post and interact with messages known as tweets.}, Facbook\footnote{Facebook is a social networking site that makes it easy for you to connect and share with your family and friends online.}, Instagram\footnote{Instagram is a photo and video-sharing social networking service}, Youtube now small creators and artists whose work could never see the day light and garner appreciation merely because of limited outreach, are provided very large number of audience from their homes and hand held devices \cite{saleem24}. However, all of this comes with a price. For example, a pottery artist who could simply create his art and sell it locally in a shop would earn much more profit than he could ever do that on internet or Instagram by sharing his art to millions of followers and devise a merchandize model on top of it to sell the product out. It is understood that it's indeed difficult for anyone to sustain a business in real world in a shop vs no cost internet but the comparable earning of the creator is too low simply because of all the middlemen. Instagram, Youtube themselves have their revenue models, to devise a merchandize model one will have to hire more external vendors who can operate on the sites etc incurs a lot of cost and the artist gets his final share after paying off all the middlemen. Let alone the time it takes for the final price to arrive in creators bank account which takes a very long time \cite{margaret25}.
 
-With Blockchain implementation in these different domains a straight forward peer to peer to transaction mechanism which gets settled in real time. For example a song uploaded on Spotify\footnote{Spotify is a music, podcast, and video streaming service}, Youtube, Soundcloud\footnote{SoundCloud is an online audio distribution platform} will basically be tied down on the \% composition of the revenue model and the artist gets paid in real time based on the number of views or listens on spotify. And it's the artist who decides the price of single online playback of the song, or the usage of the song in some other productions which may require royalty to be paid to the artists. With blockchain implementation all of these transactions can be settled in real time with the help of smart contracts and trust less, handshaking transaction mechanism.
+With the explosion of information and rise of social media there have
+been a complete paradigm shift in ways the different businesses and
+domains play out. Social media explosion and information sharing
+capabilities have provided a wide outreach for very small creators who
+could never get to share their skills or benefit from them because of
+the competition and limited resources. With platforms like
+Twitter\footnote{Twitter is an online news and social networking
+  service on which users post and interact with messages known as
+  tweets.}, Facbook\footnote{Facebook is a social networking site that
+  makes it easy for you to connect and share with your family and
+  friends online.}, Instagram\footnote{Instagram is a photo and
+  video-sharing social networking service}, Youtube now small creators
+and artists whose work could never see the day light and garner
+appreciation merely because of limited outreach, are provided very
+large number of audience from their homes and hand held devices
+\cite{saleem24}. However, all of this comes with a price. For example,
+a pottery artist who could simply create his art and sell it locally
+in a shop would earn much more profit than he could ever do that on
+internet or Instagram by sharing his art to millions of followers and
+devise a merchandize model on top of it to sell the product out. It is
+understood that it's indeed difficult for anyone to sustain a business
+in real world in a shop vs no cost internet but the comparable earning
+of the creator is too low simply because of all the middlemen.
+Instagram, Youtube themselves have their revenue models, to devise a
+merchandize model one will have to hire more external vendors who can
+operate on the sites etc incurs a lot of cost and the artist gets his
+final share after paying off all the middlemen. Let alone the time it
+takes for the final price to arrive in creators bank account which
+takes a very long time \cite{margaret25}.
+
+With Blockchain implementation in these different domains a straight
+forward peer to peer to transaction mechanism which gets settled in
+real time. For example a song uploaded on Spotify\footnote{Spotify is
+  a music, podcast, and video streaming service}, Youtube,
+Soundcloud\footnote{SoundCloud is an online audio distribution
+  platform} will basically be tied down on the \% composition of the
+revenue model and the artist gets paid in real time based on the
+number of views or listens on spotify. And it's the artist who decides
+the price of single online playback of the song, or the usage of the
+song in some other productions which may require royalty to be paid to
+the artists. With blockchain implementation all of these transactions
+can be settled in real time with the help of smart contracts and trust
+less, handshaking transaction mechanism.
 
 
 \section{Protection of rights and intellectual property}
-After discussing identity theft and solutions which Blockchain provides there are some other concerns in security as well on the information sharing platforms of social media etc. As very very large amount of information is being uploaded to the internet, where around 8 exabyte of data is being created only on phones \cite{jeff26}. On the internet virtually there's no restriction on the copyrights and if some one wishes to upload their copyrighted content or intellectual property. Any content that is uploaded on the internet can easily be duplicated and pirated with an extreme ease even today \cite{anita27}. There are technologies working really hard to make this happen but it has always been a back and forth between tightening the security with various technical advancements and the internet users looking to hack the systems, finding loopholes and exploiting them are gaining equal amount of expertise and technical help. There has never been a robust way to protect the rights on any intellectual property or content on the internet. It can be the movies, songs, copyrighted documents and much more.
 
-The biggest hurdle in enforcing this is in fact the geographical limitations of jurisdiction across countries which either doesn't exist or takes a lot diplomatic deliberations to achieve \cite{anita27}. And that consumes a lot of time to enforce anything which in the this age of exponentially growing internet which is bolstered by Cloud and as a service products\footnote{The as a Service concept, where companies offer services to help other companies become more efficient, offers a path to reduced costs and streamlined workflows.} becomes mute. For example, the sites which are pirating the data and are distributing freely over internet just to get more advertisers never really get blocked because of similar limitations \cite{ian28}. Even if they are identified  and shutdown they can easily relocate themselves to any other data center of any Infra/Platform as a Service provider.
+After discussing identity theft and solutions which Blockchain
+provides there are some other concerns in security as well on the
+information sharing platforms of social media etc. As very very large
+amount of information is being uploaded to the internet, where around
+8 exabyte of data is being created only on phones \cite{jeff26}. On
+the internet virtually there's no restriction on the copyrights and if
+some one wishes to upload their copyrighted content or intellectual
+property. Any content that is uploaded on the internet can easily be
+duplicated and pirated with an extreme ease even today \cite{anita27}.
+There are technologies working really hard to make this happen but it
+has always been a back and forth between tightening the security with
+various technical advancements and the internet users looking to hack
+the systems, finding loopholes and exploiting them are gaining equal
+amount of expertise and technical help. There has never been a robust
+way to protect the rights on any intellectual property or content on
+the internet. It can be the movies, songs, copyrighted documents and
+much more.
 
-Blockchain can prove to be the best solution in this case where any intellectual property is considered an asset and is treated as an asset where any user of the internet trying to access this asset will have to authorize themselves and pay, in case it requires payment, before they can even see the data \cite{bitcoinist29}. As the data security would not really be driven by the application that is hosting the data, in fact the applications can be created without any authentication mechanism in the first place and an asset based authentication and authorized can be applied using Blockchain channels.
+The biggest hurdle in enforcing this is in fact the geographical
+limitations of jurisdiction across countries which either doesn't
+exist or takes a lot diplomatic deliberations to achieve
+\cite{anita27}. And that consumes a lot of time to enforce anything
+which in the this age of exponentially growing internet which is
+bolstered by Cloud and as a service products\footnote{The as a Service
+  concept, where companies offer services to help other companies
+  become more efficient, offers a path to reduced costs and
+  streamlined workflows.} becomes mute. For example, the sites which
+are pirating the data and are distributing freely over internet just
+to get more advertisers never really get blocked because of similar
+limitations \cite{ian28}. Even if they are identified and shutdown
+they can easily relocate themselves to any other data center of any
+Infra/Platform as a Service provider.
+
+Blockchain can prove to be the best solution in this case where any
+intellectual property is considered an asset and is treated as an
+asset where any user of the internet trying to access this asset will
+have to authorize themselves and pay, in case it requires payment,
+before they can even see the data \cite{bitcoinist29}. As the data
+security would not really be driven by the application that is hosting
+the data, in fact the applications can be created without any
+authentication mechanism in the first place and an asset based
+authentication and authorized can be applied using Blockchain
+channels.
 
 
 \section{Halcyon ways of business}
-Most important aspect that traditionally business minds use to follow was to keep everything local. Old business model which many big businesses followed was to reduce cost of raw material and cost of transportation of raw material, build everything locally. For example a car manufacturer would like to produce the raw goods required to make the car locally to avoid transportation and higher margins charged by other providers. This however have changed recently. Companies now, considering the high demand and supply, try to pay another companies to manufacture the complete goods and just ship them as their labels \cite{ewan30}. However, in these business models as well there are a lot issues where a suppliers reliability on availability, sustenance of quality and cost can still be an issue. The major issues in these cases are again the intermediaries. Because a provider from whom a business is getting their finished could very well be following the same business model and is primarily dependent on another provider. This chain can be really hurtful for any business where a single point of failure can cause huge delays and hurt he reputation in the market.
 
-Blockchain solutions can provide the goodness of the both the old solutions and the contemporary ones. It is indeed not a good idea to start manufacturing bricks as well when an eventual goal is to build houses. However blockchain solutions can provide a new twist to the chain of providers which are now bound by the smart contracts of blockchain channels and live biddings can be associated with contracts to avoid any delays from any of these providers.
+Most important aspect that traditionally business minds use to follow
+was to keep everything local. Old business model which many big
+businesses followed was to reduce cost of raw material and cost of
+transportation of raw material, build everything locally. For example
+a car manufacturer would like to produce the raw goods required to
+make the car locally to avoid transportation and higher margins
+charged by other providers. This however have changed recently.
+Companies now, considering the high demand and supply, try to pay
+another companies to manufacture the complete goods and just ship them
+as their labels \cite{ewan30}. However, in these business models as
+well there are a lot issues where a suppliers reliability on
+availability, sustenance of quality and cost can still be an issue.
+The major issues in these cases are again the intermediaries. Because
+a provider from whom a business is getting their finished could very
+well be following the same business model and is primarily dependent
+on another provider. This chain can be really hurtful for any business
+where a single point of failure can cause huge delays and hurt he
+reputation in the market.
+
+Blockchain solutions can provide the goodness of the both the old
+solutions and the contemporary ones. It is indeed not a good idea to
+start manufacturing bricks as well when an eventual goal is to build
+houses. However blockchain solutions can provide a new twist to the
+chain of providers which are now bound by the smart contracts of
+blockchain channels and live biddings can be associated with contracts
+to avoid any delays from any of these providers.
 
 \section{Disaster Recovery an overkill}
-This is a staple benefit of anything decentralized but let's consider this particular scenario in detail. There have been a lot of companies which are running major platforms which provide disaster recovery tooling for mission critical infrastructures which cannot afford to lose any of their data, intellectual property or even the service availability. These organizations can vary from being financial institutions which are holding records of and money itself for billions of people and are handling all the transactions, there are major services which are running cloud services on which services there many applications which are running their services as a platform. However, one of the biggest problem and fear of these systems is that if they are static and in house it is a responsibility of the organization itself to maintain and implement disaster recovery processes for their infrastructure. If its basically on Cloud then it all depends on the DOUs and the terms and conditions that one agrees to before going on cloud so there's no sense of security there. Cloud can provide easy backup and recovery processes because of virtualization. But the kind of catastrophe we're discussing here is worst case scenarios, natural calamities where everything in that town, city, state of a country is lost.
 
-There have many natural calamities in which complete infrastructure of towns, and multiple cities is completely lost to the nature and its extremely difficult and tiring of some countries to even get the basic amenities like power, water supply etc running let alone someone looking into recovering he the data of a data center. There are, however, many disaster recovery solutions available which are providing these services to replicate the data from one data center remotely to a totally different data center. Replicating the data locally enough with multiple exclusive pods so that they are running on completely separate infrastructure. In these kinds of scenarios the disaster recovery services charge hefty amount of money as they'd like to invest more and more based on what category of recovery one would want. One being where a simple recovery from a lost hard drive is needed and highest level of recovery where if the complete site or datacenter is lost one should be able to recovery everything from a different site.
+This is a staple benefit of anything decentralized but let's consider
+this particular scenario in detail. There have been a lot of companies
+which are running major platforms which provide disaster recovery
+tooling for mission critical infrastructures which cannot afford to
+lose any of their data, intellectual property or even the service
+availability. These organizations can vary from being financial
+institutions which are holding records of and money itself for
+billions of people and are handling all the transactions, there are
+major services which are running cloud services on which services
+there many applications which are running their services as a
+platform. However, one of the biggest problem and fear of these
+systems is that if they are static and in house it is a responsibility
+of the organization itself to maintain and implement disaster recovery
+processes for their infrastructure. If its basically on Cloud then it
+all depends on the DOUs and the terms and conditions that one agrees
+to before going on cloud so there's no sense of security there. Cloud
+can provide easy backup and recovery processes because of
+virtualization. But the kind of catastrophe we're discussing here is
+worst case scenarios, natural calamities where everything in that
+town, city, state of a country is lost.
 
-Blockchain technology can provide a centralize database which is inherently in principle distributed. In fact these are the kind of database which are replicated across the world in there default implementation itself and do not really have to be thought out specifically for disaster recovery. When there's any disaster the continuity of the business stays as is because even though some of the nodes on the channel are lost but there are still always the rest of the nodes which have complete data on them. It provides a 24X7 support through out the year  without applying any complex technologies like replicating the data on a different continent or in a different city. Also there are smart contracts which are capable of storing the transaction related code and will trigger on provided conditions to alert, roll back transactions, procedures, network lockdown and backup procedures \cite{elmer7}.
+There have many natural calamities in which complete infrastructure of
+towns, and multiple cities is completely lost to the nature and its
+extremely difficult and tiring of some countries to even get the basic
+amenities like power, water supply etc running let alone someone
+looking into recovering he the data of a data center. There are,
+however, many disaster recovery solutions available which are
+providing these services to replicate the data from one data center
+remotely to a totally different data center. Replicating the data
+locally enough with multiple exclusive pods so that they are running
+on completely separate infrastructure. In these kinds of scenarios the
+disaster recovery services charge hefty amount of money as they'd like
+to invest more and more based on what category of recovery one would
+want. One being where a simple recovery from a lost hard drive is
+needed and highest level of recovery where if the complete site or
+datacenter is lost one should be able to recovery everything from a
+different site.
 
-Disasters can be of some other forms as well like if there are malicious attacks done to the internet facing infrastructure and if there are DOS\footnote{Denial of Service} attacks which can render the targeted systems down. In these scenarios as well the distributed setup of blockchain channels can really help keeping the system up and running. Even though there's a long way before blockchain technologies can be polished more for these kinds of totally unrelated looking applications but with a very high interest of major technology entrepreneurs and businesses all that has been shared as a proof of concept and research articles it wouldn't be long before which blockchain can be used as reliable, secure, highly available and peer-peer fault tolerant infrastructure.
+Blockchain technology can provide a centralize database which is
+inherently in principle distributed. In fact these are the kind of
+database which are replicated across the world in there default
+implementation itself and do not really have to be thought out
+specifically for disaster recovery. When there's any disaster the
+continuity of the business stays as is because even though some of the
+nodes on the channel are lost but there are still always the rest of
+the nodes which have complete data on them. It provides a 24X7 support
+through out the year without applying any complex technologies like
+replicating the data on a different continent or in a different city.
+Also there are smart contracts which are capable of storing the
+transaction related code and will trigger on provided conditions to
+alert, roll back transactions, procedures, network lockdown and backup
+procedures \cite{elmer7}.
+
+Disasters can be of some other forms as well like if there are
+malicious attacks done to the internet facing infrastructure and if
+there are DOS\footnote{Denial of Service} attacks which can render the
+targeted systems down. In these scenarios as well the distributed
+setup of blockchain channels can really help keeping the system up and
+running. Even though there's a long way before blockchain technologies
+can be polished more for these kinds of totally unrelated looking
+applications but with a very high interest of major technology
+entrepreneurs and businesses all that has been shared as a proof of
+concept and research articles it wouldn't be long before which
+blockchain can be used as reliable, secure, highly available and
+peer-peer fault tolerant infrastructure.
 
 
 \section{Big Blockchain}
-We have explored numerous possibilities that can overcome the limitation of todays information sharing world and how blockchain technologies can be applied to these contemporary solutions which showcases a futuristic path towards a truly shared economy over internet, built on mutual trust, ensured by cryptography while protecting the rights to intellectual properties and assets of billions of the users all over the world. However, as it appears to be the case, introduction of Blockchain technology to solve all these problems also poses new challenges on the adopters of these new technologies which we have to be prepared for \cite{smith31}. These challenges do not pertain to the challenges of enabling more features and capabilities of blockchain. But on the other hand these are the challenges which will have to be addressed before the blockchains got beyond our control. Let's introspect some of these challenges, the causality and status of solutions to address these challenges, if any.
+
+We have explored numerous possibilities that can overcome the
+limitation of todays information sharing world and how blockchain
+technologies can be applied to these contemporary solutions which
+showcases a futuristic path towards a truly shared economy over
+internet, built on mutual trust, ensured by cryptography while
+protecting the rights to intellectual properties and assets of
+billions of the users all over the world. However, as it appears to be
+the case, introduction of Blockchain technology to solve all these
+problems also poses new challenges on the adopters of these new
+technologies which we have to be prepared for \cite{smith31}. These
+challenges do not pertain to the challenges of enabling more features
+and capabilities of blockchain. But on the other hand these are the
+challenges which will have to be addressed before the blockchains got
+beyond our control. Let's introspect some of these challenges, the
+causality and status of solutions to address these challenges, if any.
 
 \section{Auditing challenges in Big blockchains}
-On one hand it can be safely said that Blockchain technology's substantial benefit is decentralization. In spite of that it opens numerous avenues of improvement on the current world economics and supply chain model which poses their own challenges which needs to be well thought of before hand. Protecting rights of a user's intellectual property on a blockchain based channel seems like a quick and viable solution but if we increase the cardinality of this system to billions of users on the internet it can very swiftly turn into a system which, even though secure, would still require a lot of auditing and safety fall back mechanisms \cite{smith31}. Which are devised in a way that the issues are quickly and easily identified before they can go out of hand. For instance it is simple enough to say that a particular song was uploaded on the Spotify, Youtube, Soundcloud by a creator and it was made available to be listened to, downloaded by all the users on the internet in a peer to peer transaction mechanism. However, the sheer amount of data that can be generated just for this one kind of transaction could be huge and the length of the chain may start to grow very aggressively. Having a control over that much amount of data, for appropriate auditing, to make sure the creator is getting paid her fair share in real time, there are no delays in processing of the transaction appropriate BigData solutions have to applied on Blockchains too.
 
-Blockchain as distributed it may be and the mutual trust it's based on and is backed by cryptography, at the end of the day its a chain. And to follow any kind of trail for any asset or commodity, or users for unforeseen reasons might not be simple enough once the adoption of blockchain has matured enough to be an integral part of the world's economy and financial institution. From protecting rights, to protecting any illegitimate use or wrong doings, to preventing delays based on smart contracts. All has to be settled and has to be auditable at one point in time. In all fairness the transactions on the blockchain will eventually have to be corrected, and would require transaction malleability \cite{daniel32}. Digital Autonomous Organizations\footnote{A decentralized autonomous organization, sometimes labeled a decentralized autonomous corporation, is an organization that is run through rules encoded as computer programs called smart contracts.} would come into existence and would pose another challenge for auditing as these organizations do not really come under any jurisdiction or law. Simlar, challenges can also be posed by Long-term and short term blockchain forks where the chain has been forked into multiple chains.
+On one hand it can be safely said that Blockchain technology's
+substantial benefit is decentralization. In spite of that it opens
+numerous avenues of improvement on the current world economics and
+supply chain model which poses their own challenges which needs to be
+well thought of before hand. Protecting rights of a user's
+intellectual property on a blockchain based channel seems like a quick
+and viable solution but if we increase the cardinality of this system
+to billions of users on the internet it can very swiftly turn into a
+system which, even though secure, would still require a lot of
+auditing and safety fall back mechanisms \cite{smith31}. Which are
+devised in a way that the issues are quickly and easily identified
+before they can go out of hand. For instance it is simple enough to
+say that a particular song was uploaded on the Spotify, Youtube,
+Soundcloud by a creator and it was made available to be listened to,
+downloaded by all the users on the internet in a peer to peer
+transaction mechanism. However, the sheer amount of data that can be
+generated just for this one kind of transaction could be huge and the
+length of the chain may start to grow very aggressively. Having a
+control over that much amount of data, for appropriate auditing, to
+make sure the creator is getting paid her fair share in real time,
+there are no delays in processing of the transaction appropriate
+BigData solutions have to applied on Blockchains too.
 
-On one hand it's being considered as one of the salient points of blockchain where it doesn't come under any specific countries jurisdiction and can seamlessly integrate and allow peer-peer transactions over internet across the world. But these solutions do pose audit challenges for a particular country as it cannot go beyond its geographic limits to enforce its policies. Same situation would be exacerbated with cross chain transactions where there are transactions which are carried out between two separate self sustained chains.
+Blockchain as distributed it may be and the mutual trust it's based on
+and is backed by cryptography, at the end of the day its a chain. And
+to follow any kind of trail for any asset or commodity, or users for
+unforeseen reasons might not be simple enough once the adoption of
+blockchain has matured enough to be an integral part of the world's
+economy and financial institution. From protecting rights, to
+protecting any illegitimate use or wrong doings, to preventing delays
+based on smart contracts. All has to be settled and has to be
+auditable at one point in time. In all fairness the transactions on
+the blockchain will eventually have to be corrected, and would require
+transaction malleability \cite{daniel32}. Digital Autonomous
+Organizations\footnote{A decentralized autonomous organization,
+  sometimes labeled a decentralized autonomous corporation, is an
+  organization that is run through rules encoded as computer programs
+  called smart contracts.} would come into existence and would pose
+another challenge for auditing as these organizations do not really
+come under any jurisdiction or law. Simlar, challenges can also be
+posed by Long-term and short term blockchain forks where the chain has
+been forked into multiple chains.
+
+On one hand it's being considered as one of the salient points of
+blockchain where it doesn't come under any specific countries
+jurisdiction and can seamlessly integrate and allow peer-peer
+transactions over internet across the world. But these solutions do
+pose audit challenges for a particular country as it cannot go beyond
+its geographic limits to enforce its policies. Same situation would be
+exacerbated with cross chain transactions where there are transactions
+which are carried out between two separate self sustained chains.
 
 \section{Challenges with Blockchain and Cryptography}
-There are already a numerous challenges which are posed against this fledgling technology at a very preliminary level. After adoption of blockchains, as discussed above, at a very large scale and creating an impression in almost all of the global economy may pose its own challenges beyond auditing. There are some basic challenges even today around the technology readiness of our industry to be able sustain this mammoth task. On the oher hand the basic principle behind blockchain for investing compute and providing power to computer is raising a lot of red flags already from the conversationalists. Also, beyond auditing, governments of any nations wouldn't easily digest this fact there are pseudo economies, businesses running under Digital autonomous organizations which has no real world presence and no one in real world can be held accountable for the misdoings of such rogue organizations \cite{myungsan33}.
 
-On the other hand there's a an issue pertains and affects the development and enthusiasm towards blockchain i.e. losing jobs to blockchain \cite{michael34}. Not very different from the scenario when computers arrive, there was harsh criticism towards computers too from a range of communities concerned with people losing jobs to computer. Security as well has been one of the major concerns in the blockchain paradigm \cite{mauro35}. However, when the idea of blockchain was published and the way it was devised it is nearly impossible for someone to breach any of the block chain and make changes to it which can sustain \cite{bitcoin12}. As the whole model is based completely on the cryptography and it requires a certain amount of compute spent on it, it is nearly impossible for someone to process a fake transaction and add the block to the chain. Because even though the block might get added it may never get trusted by all the other channel users. Basically the malicious user trying to hack the system will have to put in enough compute so that he can race against all the compute that's being used by all the miners in the world for that particular blockchain. And not just that to make the chain bigger enough to trust the same user will have to keep increasing his same chain with multiple block addition before anyone else in the channel does it.
+There are already a numerous challenges which are posed against this
+fledgling technology at a very preliminary level. After adoption of
+blockchains, as discussed above, at a very large scale and creating an
+impression in almost all of the global economy may pose its own
+challenges beyond auditing. There are some basic challenges even today
+around the technology readiness of our industry to be able sustain
+this mammoth task. On the oher hand the basic principle behind
+blockchain for investing compute and providing power to computer is
+raising a lot of red flags already from the conversationalists. Also,
+beyond auditing, governments of any nations wouldn't easily digest
+this fact there are pseudo economies, businesses running under Digital
+autonomous organizations which has no real world presence and no one
+in real world can be held accountable for the misdoings of such rogue
+organizations \cite{myungsan33}.
+
+On the other hand there's a an issue pertains and affects the
+development and enthusiasm towards blockchain i.e. losing jobs to
+blockchain \cite{michael34}. Not very different from the scenario when
+computers arrive, there was harsh criticism towards computers too from
+a range of communities concerned with people losing jobs to computer.
+Security as well has been one of the major concerns in the blockchain
+paradigm \cite{mauro35}. However, when the idea of blockchain was
+published and the way it was devised it is nearly impossible for
+someone to breach any of the block chain and make changes to it which
+can sustain \cite{bitcoin12}. As the whole model is based completely
+on the cryptography and it requires a certain amount of compute spent
+on it, it is nearly impossible for someone to process a fake
+transaction and add the block to the chain. Because even though the
+block might get added it may never get trusted by all the other
+channel users. Basically the malicious user trying to hack the system
+will have to put in enough compute so that he can race against all the
+compute that's being used by all the miners in the world for that
+particular blockchain. And not just that to make the chain bigger
+enough to trust the same user will have to keep increasing his same
+chain with multiple block addition before anyone else in the channel
+does it.
 
 
-Whilst we explored the nearly endless possibilities in which blockchain technologies can be leveraged and can prove to be able to provide smart solutions and applications to a wide spectrum of information technology world. There are still a lot of challenges ahead for this fledgling with a bright future technology. Ranging from the fact that there's a still a lot volatility in acceptance of the technology by all just like it was with Cloud computing when it came to energy consumed to do the computation work to make the work be validated. There are many challenges which various technology houses who are endlessly focused on building smarter solution to the nearly gone out of hand internet of things and make the world economy for global, secure and controllable.
+Whilst we explored the nearly endless possibilities in which
+blockchain technologies can be leveraged and can prove to be able to
+provide smart solutions and applications to a wide spectrum of
+information technology world. There are still a lot of challenges
+ahead for this fledgling with a bright future technology. Ranging from
+the fact that there's a still a lot volatility in acceptance of the
+technology by all just like it was with Cloud computing when it came
+to energy consumed to do the computation work to make the work be
+validated. There are many challenges which various technology houses
+who are endlessly focused on building smarter solution to the nearly
+gone out of hand internet of things and make the world economy for
+global, secure and controllable.
 
 \subsection{Technical advancements}
 
-Technology not being ready is one of the major concerns in most of the cases. There's a lot of enthusiasm towards blockchain and the technology powerhouses, businesses, entrepreneurs are continuously working on expanding the capabilities of blockchain but with the tech world in a state where right now everyone understands that it has bright future but it will still take sometime to be mature enough to be widely acceptable. Primary reason for this is that there are a lot of efforts being made in this direction but the focus has been fairly distracted. Ranging from getting the cost lower to implement it, making it truly decentralized, and to make really energy efficient. There haven't been a single chain yet that implements all of these together. Any chain that is fast and is truly decentralized would require a really high cost of implementation because of the appropriate infrastructure needs etc.
+Technology not being ready is one of the major concerns in most of the
+cases. There's a lot of enthusiasm towards blockchain and the
+technology powerhouses, businesses, entrepreneurs are continuously
+working on expanding the capabilities of blockchain but with the tech
+world in a state where right now everyone understands that it has
+bright future but it will still take sometime to be mature enough to
+be widely acceptable. Primary reason for this is that there are a lot
+of efforts being made in this direction but the focus has been fairly
+distracted. Ranging from getting the cost lower to implement it,
+making it truly decentralized, and to make really energy efficient.
+There haven't been a single chain yet that implements all of these
+together. Any chain that is fast and is truly decentralized would
+require a really high cost of implementation because of the
+appropriate infrastructure needs etc.
 
 \subsection{Energy consumption}
 
-With blockchain technology and the underlining principle of cryptography and putting in cpu work to validate a certain block on the block, at least in these scenarios is considered a waste of power. The world is already having discussions on various sources of energy that while being produced and even consumed are causing global warming and climate change on earth. In that context introduction something like blockchain which needs a lot of compute essentially to make the channel secure is a difficult imposition to be widely accepted. But there are a lot of initiatives that are being carried out right now from companies like IBM, Intel which are continuously working building green blockchain models and implementations which are energy efficient.
+With blockchain technology and the underlining principle of
+cryptography and putting in cpu work to validate a certain block on
+the block, at least in these scenarios is considered a waste of power.
+The world is already having discussions on various sources of energy
+that while being produced and even consumed are causing global warming
+and climate change on earth. In that context introduction something
+like blockchain which needs a lot of compute essentially to make the
+channel secure is a difficult imposition to be widely accepted. But
+there are a lot of initiatives that are being carried out right now
+from companies like IBM, Intel which are continuously working building
+green blockchain models and implementations which are energy
+efficient.
 
 \subsection{Governments}
 
-There are many governments of various nations who see a lot of benefits in the emerging technologies and Government of the USA, China etc are trying to adopt the technology and are trying to get on board while its still growing so that the infrastructure needs are satisfied in an early stage and they are prepared for it. The primary focus of this study has been mostly on non cryptocurrency application of blockchain and the government views on that aspect of it has been fairly positive. It is the cryptocurrencies and the self sustainable pseudo currency which can be exchanged across the boundaries of the countries has been one of the biggest areas where government may want stifle excessive growth in that direction.
+There are many governments of various nations who see a lot of
+benefits in the emerging technologies and Government of the USA, China
+etc are trying to adopt the technology and are trying to get on board
+while its still growing so that the infrastructure needs are satisfied
+in an early stage and they are prepared for it. The primary focus of
+this study has been mostly on non cryptocurrency application of
+blockchain and the government views on that aspect of it has been
+fairly positive. It is the cryptocurrencies and the self sustainable
+pseudo currency which can be exchanged across the boundaries of the
+countries has been one of the biggest areas where government may want
+stifle excessive growth in that direction.
 
 \subsection{Jobs}
 
-Blockchain technology's underlining fundamental is to remove the bottlenecks and make the communication peer to peer. Which highly drives in a direction to remove the middlemen and all the intermediaries involved to an automated balanced systems of Smart Contracts, Transactions to do the auditing, approvals etc. One of the challenges which this, and most of it is due to lack of education as well, is that adoption of blockchain would cause a lot of job loss. This is not a new aspect of growth in the information technology industry. When the internet was booming and even before that when computers where getting more and more popular in the industry almost all were worried about the job loss by automation. But eventually there's a broader answer to this problem and it is that yes there might some jobs which will reduced to a smart contract code which does, let's say an approval, but in most likelihood this is only going to be shift of job to something of more importance while building the planet smarter with a truly shared economy. However, it has to be understood that to keep up with technological advancements everyone has to keep themselves updated so that the day something that one does is automated new avenues will open and one should remain updated and ready to capitalize on such opportunities. There have been various studies being done to figure out the impact of this new technology on the jobs but it has mostly been superficial and qualitative, not quantitative \cite{michael34}.
+Blockchain technology's underlining fundamental is to remove the
+bottlenecks and make the communication peer to peer. Which highly
+drives in a direction to remove the middlemen and all the
+intermediaries involved to an automated balanced systems of Smart
+Contracts, Transactions to do the auditing, approvals etc. One of the
+challenges which this, and most of it is due to lack of education as
+well, is that adoption of blockchain would cause a lot of job loss.
+This is not a new aspect of growth in the information technology
+industry. When the internet was booming and even before that when
+computers where getting more and more popular in the industry almost
+all were worried about the job loss by automation. But eventually
+there's a broader answer to this problem and it is that yes there
+might some jobs which will reduced to a smart contract code which
+does, let's say an approval, but in most likelihood this is only going
+to be shift of job to something of more importance while building the
+planet smarter with a truly shared economy. However, it has to be
+understood that to keep up with technological advancements everyone
+has to keep themselves updated so that the day something that one does
+is automated new avenues will open and one should remain updated and
+ready to capitalize on such opportunities. There have been various
+studies being done to figure out the impact of this new technology on
+the jobs but it has mostly been superficial and qualitative, not
+quantitative \cite{michael34}.
 
 \subsection{Too autonomous}
 
-One of the other challenges of blockchain technology is pertaining to Digital Autonomous Organizations and they going rogue and building their old self sustaining economy once the marriage of artificial intelligence happens with blockchain. There have always been a lot of discussion around automation, robotics and artificial intelligence taking over the world. Which has mostly been a discussion and there has been no legitimate study on how much truth it is to it. It is indeed not possible to predict something like that because that implies that we can predict how our technology is shaping up. It is indeed true that technology is mostly driven with a common cause and intent of the drivers of the technological world like technical institutions, research institutions, businesses. And it highly depends on their interests and a balance between their intent behind shaping some technology. It could be for the common good of humanity but the same can apply to someone with a malicious intent too.
+One of the other challenges of blockchain technology is pertaining to
+Digital Autonomous Organizations and they going rogue and building
+their old self sustaining economy once the marriage of artificial
+intelligence happens with blockchain. There have always been a lot of
+discussion around automation, robotics and artificial intelligence
+taking over the world. Which has mostly been a discussion and there
+has been no legitimate study on how much truth it is to it. It is
+indeed not possible to predict something like that because that
+implies that we can predict how our technology is shaping up. It is
+indeed true that technology is mostly driven with a common cause and
+intent of the drivers of the technological world like technical
+institutions, research institutions, businesses. And it highly depends
+on their interests and a balance between their intent behind shaping
+some technology. It could be for the common good of humanity but the
+same can apply to someone with a malicious intent too.
 
 
-However, every now and then after all the security measures, whenever there's any cryptographic attack which goes viral the prices of cryptocurrencies suddenly start crashing. There's a certain truth to it but indeed in principle the technology is safe \cite{david36}.
+However, every now and then after all the security measures, whenever
+there's any cryptographic attack which goes viral the prices of
+cryptocurrencies suddenly start crashing. There's a certain truth to
+it but indeed in principle the technology is safe \cite{david36}.
 
 \section{A truly shared economy across the world}
-Blockchain development have been always driven with a good intent to overcome the shortcomings of the world's current status in form of misuse and distrust because of aggressive growth that drives a lot of collaborative with multiple parties involved which ends up being a bottleneck and doesn't provide the right value of the asset to the producer but in fact gets a lot of intermediaries who make the system complex and stifle the growth from the end producer and consumer perspective. With blockchain it would be possible to get the whole world on a single shared economy not only from the monetary aspect of it but from a supply chain perspective as well where the geographical borders and authorities do not drive the common intent of the world towards progress. Here are some insights on how the world might look after it.
 
-Blockchain like technology and continuous endorsements and advancements in it will cut down the monopoly of certain big organizations who are now part of this recursive loop where they keep pushing their agendas and ideas with their financial capital over the industry. Blockchain promises that it will change this completely and will render the intermediaries, middlemen and all those bottlenecks to simple auditing, smart contract automation. The technology will provide a women with no access or enough money to own a bank account or even a national identification, her own place in shared economy where she can easily transact with a person across the world without any long stretching processes. It will be able to provide that musician who has been uploading music to the internet but doesn't really get the right value of his product because of unauthorized use of his intellectual property. The musician will be able to transact directly with each listener and charge accordingly rather than a generic rate applied and governed by sites like Youtube, Spotify.
+Blockchain development have been always driven with a good intent to
+overcome the shortcomings of the world's current status in form of
+misuse and distrust because of aggressive growth that drives a lot of
+collaborative with multiple parties involved which ends up being a
+bottleneck and doesn't provide the right value of the asset to the
+producer but in fact gets a lot of intermediaries who make the system
+complex and stifle the growth from the end producer and consumer
+perspective. With blockchain it would be possible to get the whole
+world on a single shared economy not only from the monetary aspect of
+it but from a supply chain perspective as well where the geographical
+borders and authorities do not drive the common intent of the world
+towards progress. Here are some insights on how the world might look
+after it.
 
-And most importantly this will provide a shared economy across the globe in which without having a middleman any small or large business will get the benefit of purchasing the raw material directly from the producer and saving a lot of resources which make this complete transaction as profitable as it can be. Which in turn boosts a collective business revenue.
+Blockchain like technology and continuous endorsements and
+advancements in it will cut down the monopoly of certain big
+organizations who are now part of this recursive loop where they keep
+pushing their agendas and ideas with their financial capital over the
+industry. Blockchain promises that it will change this completely and
+will render the intermediaries, middlemen and all those bottlenecks to
+simple auditing, smart contract automation. The technology will
+provide a women with no access or enough money to own a bank account
+or even a national identification, her own place in shared economy
+where she can easily transact with a person across the world without
+any long stretching processes. It will be able to provide that
+musician who has been uploading music to the internet but doesn't
+really get the right value of his product because of unauthorized use
+of his intellectual property. The musician will be able to transact
+directly with each listener and charge accordingly rather than a
+generic rate applied and governed by sites like Youtube, Spotify.
+
+And most importantly this will provide a shared economy across the
+globe in which without having a middleman any small or large business
+will get the benefit of purchasing the raw material directly from the
+producer and saving a lot of resources which make this complete
+transaction as profitable as it can be. Which in turn boosts a
+collective business revenue.
 
 
 \section{Conclusion}
-Keeping the non-cryptocurrency applications of Blockchain technology in this study we found that there's a huge endorsement from the technological entrepreneurs, businesses and governments on adopting and to continue advancement of blockchain technologies. It was identified that the intent and underlining principle of Blockchain to eliminate bottlenecks, intermediaries, middlemen is mutually shared by a numerous of organizations. We identified that the technology is moving towards highly ambitious goal of transforming the global economy to a shared and prosperous economy, protecting the rights of the intellectual property, making sure that the creators get their right compensation, to own and monetize data. We discussed a few heterogenous applications of blockchain which showcase how beneficial and generally application this technology is. We discussed in detail how the middlemen are hurting the collective growth of economy and how blockchain and its related solutions and advancements can help with it. For example, how blockchain can be really helpful in a quick solution to the Brexit problem of customs transaction management with a new geographical border being assumed between United Kingdom and Ireland. We also discussed with numerous examples how blockchain solutions can help with securing identities, ownership of creator on his intellectual property, and in providing the right value of creators product. We also delved in detail on how against the common perception its not just the blockchain application to BigData world that is important. But for technological advancements of Blockchain and for it to be able to sustain the kind of applications that are being built based on Blockchain as an underlining solution may require a lot of progress in Big data in Blockchain as well to be able sustain the aggressive growth of Blockchain in future without compromising with any of the underlining principles.
+
+Keeping the non-cryptocurrency applications of Blockchain technology
+in this study we found that there's a huge endorsement from the
+technological entrepreneurs, businesses and governments on adopting
+and to continue advancement of blockchain technologies. It was
+identified that the intent and underlining principle of Blockchain to
+eliminate bottlenecks, intermediaries, middlemen is mutually shared by
+a numerous of organizations. We identified that the technology is
+moving towards highly ambitious goal of transforming the global
+economy to a shared and prosperous economy, protecting the rights of
+the intellectual property, making sure that the creators get their
+right compensation, to own and monetize data. We discussed a few
+heterogenous applications of blockchain which showcase how beneficial
+and generally application this technology is. We discussed in detail
+how the middlemen are hurting the collective growth of economy and how
+blockchain and its related solutions and advancements can help with
+it. For example, how blockchain can be really helpful in a quick
+solution to the Brexit problem of customs transaction management with
+a new geographical border being assumed between United Kingdom and
+Ireland. We also discussed with numerous examples how blockchain
+solutions can help with securing identities, ownership of creator on
+his intellectual property, and in providing the right value of
+creators product. We also delved in detail on how against the common
+perception its not just the blockchain application to BigData world
+that is important. But for technological advancements of Blockchain
+and for it to be able to sustain the kind of applications that are
+being built based on Blockchain as an underlining solution may require
+a lot of progress in Big data in Blockchain as well to be able sustain
+the aggressive growth of Blockchain in future without compromising
+with any of the underlining principles.
 
 
 \begin{acks}
